@@ -5,7 +5,7 @@ read -p "Enter 3rd number: " c
 arithmeticOp1=$((a+(b*c)))
 arithmeticOp2=$(((a*b)+c))
 arithmeticOp3=$((c+(a/b)))
-function arraySortDescending() {
+function arraySortAscending() {
 	arrLength=${#resultArray[@]}
 	for (( i=0; i<$arrLength; i++ ))
 	do
@@ -14,7 +14,7 @@ function arraySortDescending() {
 		do
 			arrayValue1=${resultArray[j]}
 			arrayValue2=${resultArray[min]}
-			if [ $arrayValue1 -gt $arrayValue2 ]
+			if [ $arrayValue1 -lt $arrayValue2 ]
 			then
 				min=$j
 			fi
@@ -23,7 +23,7 @@ function arraySortDescending() {
 		resultArray[i]=${resultArray[min]}
 		resultArray[min]=$temp
 	done
-	echo "Sorted resultArray in Descending order: ${resultArray[@]}"
+	echo "Sorted resultArray in Ascending order: ${resultArray[@]}"
 }
 arithmeticOp4=$(((a%b)+c))
 result[0]=$arithmeticOp1
@@ -37,5 +37,5 @@ do
 done
 echo "resultArray: ${resultArray[@]}"
 
-arraysortdescending
+arraysortascending
 
